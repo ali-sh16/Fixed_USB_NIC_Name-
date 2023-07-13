@@ -10,10 +10,40 @@ This is a simple  flowchart that shows who the program is working :
 
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/49f0156ec8fb1855a15641e6f15f419f2fad768543dac291.png)
 
-To install this software :
+> this software use to change the name of USB\_NIC automatically  to “eth1” without having to manually modify it each time the system boots , This makes it easier to save the bond file settings and not change them all the time .
 
-1.  create a directory named ‘usb\_eth1’ in the root directory . Use the following commands :   
+**Requirements :**
+
+1.  Root privileges .
+2.  Basic knowledge of Linux command line .
+3.  USB network interface card of any brand .
+4.  Orange pi 3 LTS .
+5.  Ubuntu server 22 .
+
+**To install this software :**
+
+1.  Create a directory named ‘usb\_eth1’ in the root directory .  
+    Use the following commands :   
     `cd /`  
     `sudo mkdir usb_eth1`
-
-sds
+2.  create a new file that named ‘interfaces.c’ in the ‘usb\_eth1’ directory .   
+    Use the following commands :  
+    `cd /usb_eth1`  
+    `sudo touch interfaces.c`
+3.  edit the file and paste the code of this project, then save it .  
+    Use the following commands :  
+    `sudo nano ./interfaces.c`  
+    ctrl + o and chose yes to save, then press ctrl + x to exit .
+4.  compilation ‘interfaces.c’ file .  
+    Use the following commands :  
+    `sudo g++ interfaces.c`
+5.  change the permission of ‘a.out’ file to make it execution .  
+    Use the following commands :  
+    `sudo chmood 777 ./a.out`
+6.  make ‘a.out’ run automatically  when the system is startup .  
+    Use the following commands :  
+    `sudo crontab -e`  
+    press 'Enter' to use Nano editor , Scroll down and put the following line :  
+    `@reboot /usb_eth1/a.out`  
+    ctrl + o and chose yes to save, then press ctrl + x to exit .
+7.  restart the system .
