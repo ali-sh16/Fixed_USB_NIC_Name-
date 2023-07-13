@@ -3,7 +3,7 @@
 
 int main() {
 
-    // this part of code use to detect all interfaces on orange pi 3 and put there names in array
+     // this part of code use to detect all interfaces on orange pi 3 and put there names in array
     struct ifaddrs *addrs;
     getifaddrs(&addrs);
 	std::string interface[7];
