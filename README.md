@@ -22,7 +22,7 @@ This is a simple  flowchart that shows who the program is working :
 
 **To install this software :**
 
-1.  Create a directory named ‘usb\_eth1’ in the root directory .  
+1.  create a directory named ‘usb\_eth1’ in the root directory .  
     Use the following commands :   
     `cd /`  
     `sudo mkdir usb_eth1`
@@ -46,4 +46,11 @@ This is a simple  flowchart that shows who the program is working :
     press 'Enter' to use Nano editor , Scroll down and put the following line :  
     `@reboot /usb_eth1/a.out`  
     ctrl + o and chose yes to save, then press ctrl + x to exit .
-7.  restart the system .
+7.  restart the system .  
+     
+
+Testing :
+
+When the system restarts, run the following command :  
+`sudo ifconfig`  
+All the interfaces in the system will appear, and you will see one of them named " eth1 ", knowing that the project has been completely successful .
